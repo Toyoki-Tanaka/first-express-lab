@@ -7,6 +7,12 @@ app.get("/greeting/:name", (request, response) => {
 })
 
 
+app.get("/tip/:total/:tipPercentage", (total, tipPercentage) => {
+    tipPercentage.send(`${parseInt(total.params.total) * (parseInt(total.params.tipPercentage) / 100)}`)
+})
+
+
 app.listen(3000, () => {
 
 })
+
